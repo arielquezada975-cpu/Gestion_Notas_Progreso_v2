@@ -1,0 +1,12 @@
+// TEMA: FUNCIONES + ARREGLOS
+// Calcula cuantos estudiantes aprobaron o reprobaron cada materia
+void aprobadosReprobados(struct Registro *reg, int total, float umbral)
+{
+    printf("\n--- APROBADOS Y REPROBADOS (umbral %.1f) ---\n", umbral);
+    for (int i = 0; i < total; i++)
+    {
+        float final = calcularNotaFinal(reg + i);
+        printf("%s (%s) -> %s\n", (reg+i)->nombre_estudiante, (reg+i)->codigo_materia,
+               final >= umbral ? "APROBADO" : "REPROBADO");
+    }
+}
